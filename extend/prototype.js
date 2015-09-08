@@ -1,3 +1,4 @@
+// Prototype
 var superClass = function() {};
 superClass.prototype.func1 = function() {console.log(1);}
 superClass.prototype.func2 = function() {console.log(2);}
