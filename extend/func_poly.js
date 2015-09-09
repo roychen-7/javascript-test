@@ -1,5 +1,4 @@
 // OO
-// Abstract
 function Person(name, age) {
     this.name = name; 
     this.age = age;
@@ -8,18 +7,25 @@ function Person(name, age) {
     this.sayAge = () => { console.log(this.age); }
 }
 
-// Multiple inherit
 function Man(name, age) {
-    Person.call(this, name, age);
+    var _parent = new Person(name, age);
 
     // Poly
-    sayName = this.sayName;
     this.sayName = function () {
-        sayName.call(this);
+        _parent.sayName();
         console.log("Poly");
+    }
+    
+    // Mixin
+    for (var key in _parent) {
+        if (!this[key]) {
+            this[key] = _parent[key];
+        }
     }
 }
 
 var roy = new Man('Roy', 25);
+
+console.log("ROY==========");
 roy.sayName();
 roy.sayAge();
