@@ -33,3 +33,5 @@ function gen (inheritFunc) {
     console.log('super: ' + ins.super);
     console.log('sub: ' + ins.sub);
 }
+
+// Object.create 的做法只针对 Super Class的原型，而不会调用到Super Class的构造方法，所以Super Class内部的this不会生效。
