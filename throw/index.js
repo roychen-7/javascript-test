@@ -16,17 +16,21 @@ try {
   console.log(e);
 }
 
+var util = require('util');
+
 try {
-  throw new typeException('testError', 'Number');
+  throw new typeException(100010, '%s is an unexpected type', 'Number');
 } catch (e) {
   console.log(e);
 }
 
-function baseException(message) {
+function baseException(code, message) {
+  this.code = code;
   this.message = message;
 }
 
-function typeException(message, type) {
-  baseException.call(this, message);
+function typeException(code, message, type) {
+  baseException.call(this, code, message);
+  this.message = util.format(message, type);
   this.type = type;
 }
