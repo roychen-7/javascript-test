@@ -1,0 +1,9 @@
+{
+  "name": "cookie-test",
+  "version": "0.0.0",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "express": "*",
+  }
+}
