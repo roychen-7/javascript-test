@@ -1,3 +1,7 @@
+console.log(this);
+
+// 前端的话是Window
+
 var a = 3;
 
 /*
